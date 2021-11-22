@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_58872_needit.DueDatePlusThree</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>Add three days to the Due Date field from today</description>
+        <name>DueDatePlusThree</name>
+        <script><![CDATA[var DueDatePlusThree = Class.create();
+DueDatePlusThree.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	//Define the AddThreeDays function
+	//Create a object of GlideDateTime to get the today's date
+	//Plus 3 days to the today's date object and return it
+	AddThreeDays: function(){
+		var date = new GlideDateTime();
+		date.addDaysLocalTime(3);
+		var time = date.getLocalTime();
+		var dueDate = (date.getLocalDate() + " " + time.getByFormat('HH:mm:ss'));
+		return dueDate;
+	},
+    type: 'DueDatePlusThree'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-22 02:27:25</sys_created_on>
+        <sys_id>3042265c87808110599c4336cebb3548</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>DueDatePlusThree</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_3042265c87808110599c4336cebb3548</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-22 03:52:53</sys_updated_on>
+    </sys_script_include>
+</record_update>
